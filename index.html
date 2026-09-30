@@ -6,13 +6,14 @@
 
   <title>Visit Uganda Marketplace</title>
 
-  <meta name="description" content="Discover Uganda, connect with trusted local tourism providers, and plan your unforgettable Uganda experience.">
+  <meta name="description" content="Discover Uganda and connect with trusted local tourism service providers.">
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -23,6 +24,9 @@
     }
 
     header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       background: #123d2a;
       color: white;
       padding: 18px 6%;
@@ -33,19 +37,25 @@
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 23px;
       font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 18px;
       font-size: 15px;
+      cursor: pointer;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #f4b400;
     }
 
     .hero {
@@ -87,7 +97,6 @@
       border-radius: 7px;
       text-decoration: none;
       font-weight: bold;
-      cursor: pointer;
     }
 
     .btn-primary {
@@ -101,7 +110,8 @@
     }
 
     .section {
-      padding: 65px 6%;
+      padding: 75px 6%;
+      scroll-margin-top: 90px;
     }
 
     .section h2 {
@@ -150,8 +160,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 25px;
-      max-width: 1000px;
-      margin: auto;
     }
 
     .step {
@@ -175,11 +183,13 @@
       background: #123d2a;
       color: white;
       text-align: center;
-      padding: 70px 6%;
+      padding: 75px 6%;
+      scroll-margin-top: 90px;
     }
 
     .provider h2 {
       color: white;
+      margin-bottom: 15px;
     }
 
     .provider p {
@@ -200,6 +210,18 @@
     }
 
     @media (max-width: 700px) {
+      header {
+        gap: 15px;
+      }
+
+      .logo {
+        width: 100%;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
       .hero h1 {
         font-size: 36px;
       }
@@ -207,40 +229,192 @@
       .hero p {
         font-size: 17px;
       }
-
-      header {
-        gap: 12px;
-      }
-
-      nav {
-        width: 100%;
-      }
-
-      nav a {
-        margin-left: 0;
-        margin-right: 15px;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">🇺🇬 Visit Uganda Marketplace</div>
+<header>
+  <div class="logo">🇺🇬 Visit Uganda Marketplace</div>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#how">How It Works</a>
-      <a href="#providers">Providers</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#how">How It Works</a>
+    <a href="#providers">Providers</a>
+  </nav>
+</header>
 
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-content">
+<section class="hero" id="home">
 
-      <h1>Discover Uganda. Experience More
+  <div class="hero-content">
+
+    <h1>Discover Uganda. Experience More.</h1>
+
+    <p>
+      Connect with trusted local tourism service providers
+      and make your Uganda journey simple, exciting and memorable.
+    </p>
+
+    <div class="buttons">
+
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSflFMER5yowNoPQFsczBfpWqIpz5U7tWK76XY5IR2FvGFyHIA/viewform?usp=header"
+        target="_blank"
+        class="btn btn-primary">
+        List Your Business
+      </a>
+
+      <a href="#services" class="btn btn-secondary">
+        Explore Uganda
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="services">
+
+  <h2>What You Can Find</h2>
+
+  <p class="section-intro">
+    Everything you need to enjoy Uganda, brought together in one place.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">🏨</div>
+      <h3>Hotels & Lodges</h3>
+      <p>Find accommodation for your stay.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🚙</div>
+      <h3>Transport</h3>
+      <p>Connect with drivers, car hire and airport transfers.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🦍</div>
+      <h3>Tour Experiences</h3>
+      <p>Discover wildlife, parks and cultural experiences.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🧭</div>
+      <h3>Tour Guides</h3>
+      <p>Connect with local guides who know Uganda.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🍽️</div>
+      <h3>Food & Restaurants</h3>
+      <p>Discover restaurants and Ugandan food experiences.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎁</div>
+      <h3>Local Products</h3>
+      <p>Discover authentic Ugandan crafts and products.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section how-it-works" id="how">
+
+  <h2>How It Works</h2>
+
+  <p class="section-intro">
+    We make it easier for visitors to connect with Uganda.
+  </p>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="number">1</div>
+      <h3>Choose a Service</h3>
+      <p>Find the service you need.</p>
+    </div>
+
+    <div class="step">
+      <div class="number">2</div>
+      <h3>Contact Us</h3>
+      <p>Tell us what you need and when you plan to visit.</p>
+    </div>
+
+    <div class="step">
+      <div class="number">3</div>
+      <h3>We Coordinate</h3>
+      <p>We help coordinate your bookings with local providers.</p>
+    </div>
+
+    <div class="step">
+      <div class="number">4</div>
+      <h3>Enjoy Uganda</h3>
+      <p>Arrive, explore and enjoy your Ugandan experience.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="provider" id="providers">
+
+  <h2>Are You a Tourism Service Provider?</h2>
+
+  <p>
+    Hotels, lodges, tour guides, transport companies, restaurants,
+    activity providers and other tourism businesses can join our
+    growing marketplace.
+  </p>
+
+  <a
+    href="https://docs.google.com/forms/d/e/1FAIpQLSflFMER5yowNoPQFsczBfpWqIpz5U7tWK76XY5IR2FvGFyHIA/viewform?usp=header"
+    target="_blank"
+    class="btn btn-primary">
+    Register Your Business
+  </a>
+
+</section>
+
+
+<footer>
+
+  <p><strong>Visit Uganda Marketplace 🇺🇬</strong></p>
+
+  <p>Connecting visitors with Uganda's local tourism economy.</p>
+
+  <p>© 2026 Visit Uganda Marketplace. All rights reserved.</p>
+
+</footer>
+
+
+<script>
+  document.querySelectorAll('nav a').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+
+      const target = document.querySelector(this.getAttribute('href'));
+
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
