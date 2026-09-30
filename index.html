@@ -3,134 +3,378 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Visit Uganda Marketplace | Plan Your Uganda Trip</title>
-
-  <meta name="description" content="Plan your Uganda trip with personalized travel coordination, accommodation, transport, tours and unforgettable experiences.">
+  <title>Visit Uganda Marketplace</title>
 
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
     }
 
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
+      background: #f5f7f2;
       color: #222;
-      background: #f7f9f7;
+      line-height: 1.6;
     }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: #123d2a;
+      background: linear-gradient(135deg, #087f23, #f2b705);
       color: white;
-      padding: 16px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      padding: 25px 20px;
+      text-align: center;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
+    header h1 {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 17px;
     }
 
     nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
+      background: #111;
+      padding: 12px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-size: 15px;
+      margin: 0 10px;
+      font-weight: bold;
     }
 
     nav a:hover {
-      color: #f4b400;
+      color: #f2b705;
     }
 
     .hero {
-      min-height: 600px;
-      padding: 90px 6%;
+      min-height: 430px;
       display: flex;
       align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
       background:
-        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-        url("https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=1600&q=80");
-      background-size: cover;
-      background-position: center;
+        linear-gradient(rgba(0,80,20,.65), rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1535083783855-76ae62b2914e?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
       color: white;
     }
 
     .hero-content {
-      max-width: 760px;
+      max-width: 850px;
     }
 
-    .hero h1 {
-      font-size: 50px;
-      line-height: 1.15;
-      margin-bottom: 22px;
+    .hero h2 {
+      font-size: 46px;
+      margin-bottom: 15px;
     }
 
     .hero p {
       font-size: 20px;
-      margin-bottom: 30px;
-      max-width: 680px;
+      margin-bottom: 25px;
     }
 
-    .buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
+    .button {
       display: inline-block;
-      padding: 15px 24px;
-      border-radius: 8px;
+      background: #f2b705;
+      color: #111;
+      padding: 13px 25px;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      border: none;
-      cursor: pointer;
+      margin: 5px;
     }
 
-    .btn-primary {
-      background: #f4b400;
-      color: #111;
-    }
-
-    .btn-secondary {
+    .button:hover {
       background: white;
-      color: #123d2a;
     }
 
-    .section {
-      padding: 75px 6%;
-      scroll-margin-top: 85px;
+    section {
+      padding: 50px 20px;
+      max-width: 1150px;
+      margin: auto;
     }
 
-    .section h2 {
+    section h2 {
       text-align: center;
-      margin-bottom: 15px;
-      font-size: 34px;
-      color: #123d2a;
+      color: #087f23;
+      margin-bottom: 30px;
+      font-size: 30px;
     }
 
     .intro {
       text-align: center;
-      max-width: 750px;
-      margin: 0 auto 45px;
-      color: #555;
+      max-width: 800px;
+      margin: auto;
+      font-size: 18px;
     }
 
     .cards {
       display: grid;
-     
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,.12);
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      color: #087f23;
+      margin-bottom: 8px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .step {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.1);
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      margin: auto auto 15px;
+      border-radius: 50%;
+      background: #087f23;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .contact {
+      background: #087f23;
+      color: white;
+      border-radius: 20px;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .contact h2 {
+      color: white;
+    }
+
+    .contact p {
+      margin: 10px 0;
+      font-size: 17px;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 27px;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      nav a {
+        margin: 0 5px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🇺🇬 Visit Uganda Marketplace</h1>
+    <p>Your trusted connection to unforgettable Uganda experiences</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#experiences">Experiences</a>
+    <a href="#how">How It Works</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="hero" id="home">
+    <div class="hero-content">
+      <h2>Discover the Pearl of Africa</h2>
+      <p>
+        Plan your Uganda adventure with a local coordinator who can help
+        arrange accommodation, transport, tours and unforgettable experiences.
+      </p>
+
+      <a class="button" href="#experiences">Explore Uganda</a>
+      <a class="button" href="#contact">Plan My Trip</a>
+    </div>
+  </div>
+
+  <section>
+    <h2>Welcome to Uganda</h2>
+
+    <p class="intro">
+      Visit Uganda Marketplace connects international visitors with trusted
+      local tourism services and experiences across Uganda. From Kampala to
+      national parks, lakes, mountains and cultural communities, we help make
+      your journey easier to organize.
+    </p>
+  </section>
+
+  <section id="experiences">
+    <h2>Popular Uganda Experiences</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+          <h3>🦁 Wildlife Safaris</h3>
+          <p>
+            Explore Uganda's amazing wildlife and discover unforgettable
+            safari experiences.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+          <h3>🌿 Nature & Adventure</h3>
+          <p>
+            Discover forests, waterfalls, mountains, lakes and beautiful
+            natural landscapes.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+          <h3>🥁 Culture & Community</h3>
+          <p>
+            Meet local communities, experience Ugandan culture and enjoy
+            authentic local experiences.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+          <h3>🏙️ Kampala</h3>
+          <p>
+            Experience Uganda's capital through food, entertainment,
+            shopping, nightlife and city tours.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>How It Works</h2>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Tell Us Your Plans</h3>
+        <p>
+          Share your travel dates, interests, budget and preferred activities.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>We Organize</h3>
+        <p>
+          We help coordinate accommodation, transportation, activities and
+          local service providers.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Enjoy Uganda</h3>
+        <p>
+          Arrive and enjoy your Ugandan adventure while your local coordinator
+          helps make the journey easier.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <h2>Ready to Visit Uganda?</h2>
+
+      <p>
+        Tell us what kind of Uganda experience you want.
+      </p>
+
+      <p>
+        We can help you plan your trip and connect you with local services.
+      </p>
+
+      <br>
+
+      <a class="button"
+         href="https://docs.google.com/forms/d/e/1FAIpQLSdINek6gJIsX90_f-RZ4SJ3H-e1z2U5g-jnKhESUkvo9MKjxk/viewform"
+         target="_blank">
+        🇺🇬 Start Your Trip
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Visit Uganda Marketplace</p>
+    <p>Discover Uganda. Connect Locally. Travel Better.</p>
+  </footer>
+
+</body>
+</html>
